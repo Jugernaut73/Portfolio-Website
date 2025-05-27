@@ -6,11 +6,19 @@ import ProjectsSection from '@/components/ProjectsSection'
 import Certifications from '@/components/Certifications'
 import Footer from '@/components/Footer'
 
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "Skills", link: "#skills" },
+  { name: "Projects", link: "#projects" },
+  { name: "Certifications", link: "#certifications" },
+  { name: "Contact", link: "#contact" },
+];
+
 const page = () => {
   return (
     <main className="flex flex-col px-5 pt-20 sm:px-10 relative">
         <div className="max-w-7xl mx-auto w-full">
-            <Navbar />
+            <Navbar navItems={navItems} />
             <HeroSection />
             <Skills />
             <ProjectsSection />
