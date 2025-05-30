@@ -19,12 +19,8 @@ const HeroSection = () => {
           <p className="uppercase font-bold text-sm tracking-widest">
             Based In Ohio
           </p>
-          {/* <h1 className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-tight tracking-wide">
-            Quality Design &{" "}
-            <span className="text-primary">Web Development</span> Synergy
-          </h1> */}
           <TextGenerateEffect
-            words="Quality Design & Web Development Synergy"
+            words="Maintainable Code & Software Best Practices"
             className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
           />
           <p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-dark-200 dark:text-stone-200/70">
