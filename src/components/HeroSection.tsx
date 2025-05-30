@@ -24,15 +24,14 @@ const HeroSection = () => {
             className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
           />
           <p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-dark-200 dark:text-stone-200/70">
-            Hi, I&apos;m Zach, I create intuitive, visually stunning and
-            highly functional web applications.
+            Hi, I&apos;m Zach. I engineer clean, efficient, and production-ready code.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <ShinyButton icon={<ChevronRight />}>
               <Link href="#work">See My Work</Link>
             </ShinyButton>
             <a
-              href="/resume/CV_en.pdf"
+              href="/resume/Zach_Ault_Resume.pdf"
               download
               className="flex items-center gap-2.5 group"
             >
