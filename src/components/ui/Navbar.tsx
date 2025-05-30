@@ -7,11 +7,12 @@ import {
   useScroll,
 } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { JSX, useState } from "react";
 
 type NavItem = {
   name: string;
   link: string;
+  icon?: JSX.Element;
 }
 
 export const Navbar = ({
@@ -69,6 +70,7 @@ export const Navbar = ({
               "relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
             )}
           >
+            <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block font-medium">{navItem.name}</span>
           </Link>
         ))}

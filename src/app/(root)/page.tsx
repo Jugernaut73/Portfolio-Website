@@ -1,3 +1,10 @@
+import {
+  BriefcaseBusiness,
+  Contact,
+  House,
+  UserRound,
+  Award,
+} from "lucide-react";
 import React from 'react'
 import { Navbar } from '@/components/ui/Navbar'
 import HeroSection from '@/components/HeroSection'
@@ -7,11 +14,11 @@ import Certifications from '@/components/Certifications'
 import Footer from '@/components/Footer'
 
 const navItems = [
-  { name: "Home", link: "#home" },
-  { name: "Skills", link: "#skills" },
-  { name: "Projects", link: "#projects" },
-  { name: "Certifications", link: "#certifications" },
-  { name: "Contact", link: "#contact" },
+  { name: "Home", link: "#home", icon: <House /> },
+  { name: "Work", link: "#projects", icon: <BriefcaseBusiness />},
+  { name: "About", link: "#skills", icon: <UserRound />},
+  { name: "Certifications", link: "#certifications", icon: <Award /> },
+  { name: "Contact", link: "#contact", icon: <Contact /> },
 ];
 
 const page = () => {
