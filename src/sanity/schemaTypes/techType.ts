@@ -5,6 +5,12 @@ export const techType = defineType({
     type: "document",
     fields: [
         {
+        name: "pos",
+        title: "Position",
+        type: "number",
+        validation: (Rule) => Rule.required(),
+        },
+        {
         name: "name",
         title: "Name",
         type: "string",
