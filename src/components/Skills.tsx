@@ -9,12 +9,12 @@ const Skills = ({
     techCardsItems: {
         name: string;
         description: string;
-        iconURL: string;
+        iconUrl: string;
         bgColor: string;
     }[];
 }) => {
   return (
-    <div className="relative z-10 py-16 sm:py-24" id="about">
+    <div className="relative z-10 py-16 sm:py-24" id="skills">
       <div className="space-y-4 mb-10">
         <motion.h1
           initial={{ opacity: 0, x: -75 }}

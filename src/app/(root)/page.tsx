@@ -14,6 +14,7 @@ import Certifications from '@/components/Certifications'
 import Footer from '@/components/Footer'
 import { client, urlFor } from "@/lib/sanity";
 import { TECH_QUERY } from "@/sanity/lib/queries";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 const navItems = [
   { name: "Home", link: "#home", icon: <House /> },
@@ -26,19 +27,25 @@ const navItems = [
 export default async function Page() {
   const rawData = await client.fetch(TECH_QUERY);
 
-  const techCardsItems = rawData.map((item: any) => ({
+  const techCardsItems = rawData
+  .sort((a: { pos: number }, b: { pos: number }) => a.pos - b.pos)
+  .map((item: {
+    name: string,
+    description: string,
+    icon: SanityImageSource,
+    bgColor: { hex: string };
+  }) => ({
     name: item.name,
     description: item.description,
-    iconUrl: urlFor(item.icon).width(64).url(),
+    iconUrl: item.icon ? urlFor(item.icon).width(64).url() : null,
     bgColor: item.bgColor.hex
   }));
-
   return (
     <main className="flex flex-col px-5 sm:px-10 relative">
         <div className="max-w-7xl mx-auto w-full">
             <Navbar navItems={navItems} />
             <HeroSection />
-            <Skills techCardItems={techCardsItems}/>
+            <Skills techCardsItems={techCardsItems}/>
             <ProjectsSection />
             <Certifications />
             <Footer />
