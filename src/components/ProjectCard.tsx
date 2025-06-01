@@ -81,7 +81,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               />
             </div>
         )
-      )};
+      )}
       <div>
         <h3 className="text-2xl sm:text-3xl font-semibold">{name}</h3>
         <div className="mt-4 flex flex-col sm:flex-row justify-between gap-5">
