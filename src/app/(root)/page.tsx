@@ -1,3 +1,7 @@
+// ==============================
+// 📦 Imports
+// ==============================
+
 import {
   BriefcaseBusiness,
   Contact,
@@ -16,6 +20,10 @@ import { client, urlFor } from "@/lib/sanity";
 import { TECH_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+// ==============================
+// 🧭 Navigation Items
+// ==============================
+
 const navItems = [
   { name: "Home", link: "#home", icon: <House /> },
   { name: "Work", link: "#projects", icon: <BriefcaseBusiness />},
@@ -25,6 +33,11 @@ const navItems = [
 ];
 
 export default async function Page() {
+
+  // ==============================
+  // 🧠 Tech Query
+  // ==============================
+
   const rawData = await client.fetch(TECH_QUERY);
 
   const techCardsItems = rawData
@@ -40,6 +53,15 @@ export default async function Page() {
     iconUrl: item.icon ? urlFor(item.icon).width(64).url() : null,
     bgColor: item.bgColor.hex
   }));
+
+  // ==============================
+  // 📁 Projects Query
+  // ==============================
+
+  // ==============================
+  // 🧱 Page Component
+  // ==============================
+
   return (
     <main className="flex flex-col px-5 sm:px-10 relative">
         <div className="max-w-7xl mx-auto w-full">
