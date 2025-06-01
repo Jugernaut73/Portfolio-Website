@@ -14,5 +14,5 @@ defineQuery(`*[_type == "project"] | order(pos desc) {
   pos,
   name,
   image,
-  technologies
+  techStack
 }`)

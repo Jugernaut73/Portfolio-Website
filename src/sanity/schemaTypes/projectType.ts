@@ -26,8 +26,8 @@ export const projectType = defineType({
         validation: (Rule) => Rule.required(),
         },
         {
-        name: "technologies",
-        title: "Technologies",
+        name: "techStack",
+        title: "Tech Stack",
         type: "array",
         of: [{ type: "string" }],
         validation: (Rule) => Rule.required(),
