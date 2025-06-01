@@ -25,7 +25,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="bg-[#1d1c1c] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
+      className="bg-[#1d1c1c] rounded-lg p-4 sm:p-8 space-y-8"
     >
       {image ? (
         webLink ? (
@@ -94,7 +94,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               rel="noopener noreferrer"
               className="p-3 bg-blue-500 hover:bg-blue-500/80 transition-colors duration-200 rounded-lg self-start sm:self-end"
             >
-              <MoveUpRight className="size-5 sm:size-8 text-[#F3F4F3] dark:text-dark-200" />
+              <MoveUpRight className="size-5 sm:size-8 text-[#F3F4F3]" />
             </a>
           )}
         </div>
