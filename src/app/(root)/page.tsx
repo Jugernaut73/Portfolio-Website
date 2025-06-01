@@ -17,7 +17,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import Certifications from '@/components/Certifications'
 import Footer from '@/components/Footer'
 import { client, urlFor } from "@/lib/sanity";
-import { TECH_QUERY } from "@/sanity/lib/queries";
+import { PROJECT_QUERY, TECH_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // ==============================
@@ -38,9 +38,9 @@ export default async function Page() {
   // 🧠 Tech Query
   // ==============================
 
-  const rawData = await client.fetch(TECH_QUERY);
+  const rawTechData = await client.fetch(TECH_QUERY);
 
-  const techCardsItems = rawData
+  const techCardsItems = rawTechData
   .sort((a: { pos: number }, b: { pos: number }) => a.pos - b.pos)
   .map((item: {
     name: string,
@@ -58,6 +58,24 @@ export default async function Page() {
   // 📁 Projects Query
   // ==============================
 
+  const rawProjectData = await client.fetch(PROJECT_QUERY);
+
+  const portfolioProjects = rawProjectData
+  .sort((a: { pos: number }, b: { pos: number }) => a.pos - b.pos)
+  .map((item: {
+    name: string;
+    image: string;
+    techStack: string[];
+    gitLink: string;
+    webLink: string;
+  }) => ({
+    name: item.name,
+    image: item.image ? urlFor(item.image).width(1000).url() : null,
+    techStack: item.techStack,
+    gitLink: item?.gitLink ?? null,
+    webLink: item?.webLink ?? null
+  }));
+
   // ==============================
   // 🧱 Page Component
   // ==============================
@@ -68,7 +86,7 @@ export default async function Page() {
             <Navbar navItems={navItems} />
             <HeroSection />
             <Skills techCardsItems={techCardsItems}/>
-            <ProjectsSection />
+            <ProjectsSection portfolioProjects={portfolioProjects}/>
             <Certifications />
             <Footer />
         </div>
