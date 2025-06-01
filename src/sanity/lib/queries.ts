@@ -8,3 +8,11 @@ defineQuery(`*[_type == "tech"] | order(pos desc) {
   bgColor { hex },
   description
 }`)
+
+export const PROJECT_QUERY =
+defineQuery(`*[_type == "project"] | order(pos desc) {
+  pos,
+  name,
+  image,
+  technologies
+}`)
