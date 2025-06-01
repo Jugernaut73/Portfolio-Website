@@ -54,16 +54,34 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             </div>
           )
         ) : (
-          <div className="rounded-lg overflow-hidden">
-            <Image
-              src={"/placeholders/Placeholder.jpg"}
-              width={1000}
-              height={1000}
-              alt={"Project image"}
-              className="object-cover hover:scale-110 transition-transform duration-700"
-            />
-          </div>
-        )}
+          webLink ? (
+          <a 
+          href={`${webLink}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="rounded-lg overflow-hidden block">
+            <div className="rounded-lg overflow-hidden">
+              <Image
+                src={"/placeholders/Placeholder.jpg"}
+                width={1000}
+                height={1000}
+                alt={"Project image"}
+                className="object-cover hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+          </a>
+        ) : (
+            <div className="rounded-lg overflow-hidden">
+              <Image
+                src={"/placeholders/Placeholder.jpg"}
+                width={1000}
+                height={1000}
+                alt={"Project image"}
+                className="object-cover hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+        )
+      )};
       <div>
         <h3 className="text-2xl sm:text-3xl font-semibold">{name}</h3>
         <div className="mt-4 flex flex-col sm:flex-row justify-between gap-5">
