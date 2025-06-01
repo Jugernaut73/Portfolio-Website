@@ -2,7 +2,6 @@
 
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import ProjectTechnologiesMini from "./ProjectTechnologiesMini";
 
 import { motion } from "framer-motion";
@@ -27,7 +26,11 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       className="bg-[#1d1c1c] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
     >
     {webLink ? (
-      <Link href={`${webLink}`} target="_blank" className="rounded-lg overflow-hidden block">
+      <a 
+      href={`${webLink}`} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="rounded-lg overflow-hidden block">
           <Image
             src={image}
             width={1000}
@@ -35,7 +38,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             alt={"Project image"}
             className="object-cover hover:scale-110 transition-transform duration-700"
           />
-        </Link>
+      </a>
       ) : (
         <div className="rounded-lg overflow-hidden">
           <Image
@@ -53,13 +56,14 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           <ProjectTechnologiesMini techStack={techStack} />
 
           {gitLink && (
-            <Link
+            <a
               href={`${gitLink}`}
               target="_blank" 
+              rel="noopener noreferrer"
               className="p-3 bg-blue-500 hover:bg-blue-500/80 transition-colors duration-200 rounded-lg self-start sm:self-end"
             >
               <MoveUpRight className="size-5 sm:size-8 text-[#F3F4F3] dark:text-dark-200" />
-            </Link>
+            </a>
           )}
         </div>
       </div>
