@@ -32,6 +32,16 @@ export const projectType = defineType({
         of: [{ type: "string" }],
         validation: (Rule) => Rule.required(),
         },
+        {
+        name: "gitLink",
+        title: "GitHub",
+        type: "url",
+        },
+        {
+        name: "webLink",
+        title: "Website",
+        type: "url",
+        },
     ],
     preview: {
         select: {

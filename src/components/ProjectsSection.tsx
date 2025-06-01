@@ -1,5 +1,40 @@
-const ProjectsSection = () => {
-    return <h1>Projects Section</h1>
-}
+import Link from "next/link";
+import ProjectCard from "./ProjectCard";
+import ShinyButton from "./ui/ShinyButton";
+import { ChevronRight } from "lucide-react";
+
+const ProjectsSection = ({
+  portfolioProjects,
+}: {
+    portfolioProjects: {
+      name: string;
+      image: string;
+      techStack: string[];
+      gitLink: string;
+      webLink: string;
+    }[];
+}) => {
+  return (
+    <div className="py-32" id="work">
+      <div className="flex gap-4 flex-col sm:flex-row sm:items-center justify-between">
+        <h2 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200">
+          My portfolio
+        </h2>
+
+        <ShinyButton icon={<ChevronRight />}>
+          <Link href="https://github.com/Jugernaut73" target="_blank">
+            All Projects
+          </Link>
+        </ShinyButton>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-4 mt-8">
+        {portfolioProjects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default ProjectsSection;
