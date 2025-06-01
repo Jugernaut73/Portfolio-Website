@@ -5,7 +5,8 @@ import Image from "next/image";
 import ProjectTechnologiesMini from "./ProjectTechnologiesMini";
 
 import { motion } from "framer-motion";
-import { Skeleton } from "./ui/skeleton";
+
+
 
 interface ProjectProps {
   name: string;
@@ -53,7 +54,15 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             </div>
           )
         ) : (
-          <Skeleton className="w-full aspec-[1/1] rounded-lg" />
+          <div className="rounded-lg overflow-hidden">
+            <Image
+              src={"/placeholders/Placeholder.jpg"}
+              width={1000}
+              height={1000}
+              alt={"Project image"}
+              className="object-cover hover:scale-110 transition-transform duration-700"
+            />
+          </div>
         )}
       <div>
         <h3 className="text-2xl sm:text-3xl font-semibold">{name}</h3>
