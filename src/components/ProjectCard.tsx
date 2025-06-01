@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       className="bg-[#1d1c1c] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
     >
     {webLink ? (
-      <Link href={`${webLink}`} className="rounded-lg overflow-hidden block">
+      <Link href={`${webLink}`} target="_blank" className="rounded-lg overflow-hidden block">
           <Image
             src={image}
             width={1000}
@@ -55,6 +55,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           {gitLink && (
             <Link
               href={`${gitLink}`}
+              target="_blank" 
               className="p-3 bg-blue-500 hover:bg-blue-500/80 transition-colors duration-200 rounded-lg self-start sm:self-end"
             >
               <MoveUpRight className="size-5 sm:size-8 text-[#F3F4F3] dark:text-dark-200" />
