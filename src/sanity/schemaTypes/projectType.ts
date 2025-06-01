@@ -23,7 +23,6 @@ export const projectType = defineType({
         options: {
             hotspot: true,
         },
-        validation: (Rule) => Rule.required(),
         },
         {
         name: "techStack",

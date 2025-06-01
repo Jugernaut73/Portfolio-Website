@@ -5,6 +5,7 @@ import Image from "next/image";
 import ProjectTechnologiesMini from "./ProjectTechnologiesMini";
 
 import { motion } from "framer-motion";
+import { Skeleton } from "./ui/skeleton";
 
 interface ProjectProps {
   name: string;
@@ -25,31 +26,35 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       transition={{ duration: 0.5, delay: 0.25 }}
       className="bg-[#1d1c1c] dark:bg-dark-200 rounded-lg p-4 sm:p-8 space-y-8"
     >
-    {webLink ? (
-      <a 
-      href={`${webLink}`} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="rounded-lg overflow-hidden block">
-          <Image
-            src={image}
-            width={1000}
-            height={1000}
-            alt={"Project image"}
-            className="object-cover hover:scale-110 transition-transform duration-700"
-          />
-      </a>
-      ) : (
-        <div className="rounded-lg overflow-hidden">
-          <Image
-            src={image}
-            width={1000}
-            height={1000}
-            alt={"Project image"}
-            className="object-cover hover:scale-110 transition-transform duration-700"
-          />
-        </div>
-      )}
+      {image ? (
+        webLink ? (
+          <a 
+          href={`${webLink}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="rounded-lg overflow-hidden block">
+              <Image
+                src={image}
+                width={1000}
+                height={1000}
+                alt={"Project image"}
+                className="object-cover hover:scale-110 transition-transform duration-700"
+              />
+          </a>
+          ) : (
+            <div className="rounded-lg overflow-hidden">
+              <Image
+                src={image}
+                width={1000}
+                height={1000}
+                alt={"Project image"}
+                className="object-cover hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+          )
+        ) : (
+          <Skeleton className="w-full aspec-[1/1] rounded-lg" />
+        )}
       <div>
         <h3 className="text-2xl sm:text-3xl font-semibold">{name}</h3>
         <div className="mt-4 flex flex-col sm:flex-row justify-between gap-5">
