@@ -8,7 +8,7 @@ const HeroSection = () => {
     <>
       <div className="h-screen w-full flex items-center justify-center absolute top-0 left-0">
         {/* Radial gradient for the container to give a faded look */}
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center" />
       </div>
 
       <div
@@ -24,7 +24,7 @@ const HeroSection = () => {
             className="text-[40px] md:text-6xl lg:text-7xl font-bold text-center max-w-5xl leading-snug tracking-wide"
           />
           <p className="pt-5 pb-8 text-sm sm:text-base md:text-lg text-dark-200 dark:text-stone-200/70">
-            Hi, I&apos;m Zach. I engineer clean, efficient, and production-ready code.
+            Hi, I&apos;m Zach! I engineer clean, efficient, and production-ready code.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <ShinyButton icon={<ChevronRight />}>
