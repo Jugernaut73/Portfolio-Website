@@ -94,7 +94,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               rel="noopener noreferrer"
               className="p-3 bg-blue-500 hover:bg-blue-500/80 transition-colors duration-200 rounded-lg self-start sm:self-end"
             >
-              <MoveUpRight className="size-5 sm:size-8 text-[#F3F4F3]" />
+              <MoveUpRight className="size-5 sm:size-8 text-[#1c1d1c]" />
             </a>
           )}
         </div>
