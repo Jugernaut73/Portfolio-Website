@@ -28,7 +28,7 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <ShinyButton icon={<ChevronRight />}>
-              <Link href="#work">See My Work</Link>
+              <Link href="#projects">See My Work</Link>
             </ShinyButton>
             <a
               href="/resume/Zach_Ault_Resume.pdf"
