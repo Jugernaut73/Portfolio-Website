@@ -17,7 +17,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import Certifications from '@/components/Certifications'
 import Footer from '@/components/Footer'
 import { client, urlFor } from "@/lib/sanity";
-import { PROJECT_QUERY, TECH_QUERY } from "@/sanity/lib/queries";
+import { CERT_QUERY, PROJECT_QUERY, TECH_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // ==============================
@@ -77,6 +77,35 @@ export default async function Page() {
   }));
 
   // ==============================
+  // 🎓 Certifications Query
+  // ==============================
+
+  type Certification = {
+    name: string;
+    company: string;
+    icon: SanityImageSource;
+    link: string;
+    date: string;
+  };
+  const rawCertData: Certification[] = await client.fetch(CERT_QUERY);
+
+  const certCardsItems = rawCertData
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .map((item: {
+    name: string,
+    company: string,
+    icon: SanityImageSource,
+    link: string;
+    date: string;
+  }) => ({
+    name: item.name,
+    company: item.company,
+    icon: urlFor(item.icon).width(1000).url(),
+    link: item?.link ?? null,
+    date: item.date,
+  })); 
+
+  // ==============================
   // 🧱 Page Component
   // ==============================
 
@@ -87,7 +116,7 @@ export default async function Page() {
             <HeroSection />
             <Skills techCardsItems={techCardsItems}/>
             <ProjectsSection portfolioProjects={portfolioProjects}/>
-            <Certifications />
+            <Certifications certCardItems={certCardsItems}/>
             <Footer />
         </div>
     </main>

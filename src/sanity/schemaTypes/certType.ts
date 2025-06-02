@@ -23,6 +23,7 @@ export const certType = defineType({
         options: {
             hotspot: true,
         },
+        validation: (Rule) => Rule.required(),
         },
         {
         name: "link",
@@ -30,15 +31,10 @@ export const certType = defineType({
         type: "url",
         },
         {
-        name: "startDate",
-        title: "Start Date",
+        name: "date",
+        title: "Date",
         type: "date",
         validation: (Rule) => Rule.required(),
-        },
-        {
-        name: "endDate",
-        title: "End Date",
-        type: "date",
         },
     ],
     preview: {

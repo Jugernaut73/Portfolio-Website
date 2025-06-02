@@ -18,3 +18,12 @@ defineQuery(`*[_type == "project"] | order(pos desc) {
   gitLink,
   webLink
 }`)
+
+export const CERT_QUERY =
+defineQuery(`*[_type == "certification"] | order(startDate desc) {
+  name,
+  company,
+  icon,
+  link,
+  date
+}`)
