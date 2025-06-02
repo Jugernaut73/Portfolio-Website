@@ -4,7 +4,7 @@ const ProjectTechnologiesMini = ({ techStack }: { techStack: string[] }) => {
       {techStack.map((tech) => (
         <p
           key={tech}
-          className="text-xs text-dark-200/60 hover:text-dark-200 dark:text-white/60 dark:hover:text-white font-medium bg-[#292828] hover:bg-[#464444] border border-[#464444] hover:border-[#ffffff]/70 transition-colors duration-200 w-fit rounded-md py-2 px-4"
+          className="text-xs text-dark-200/60 hover:text-dark-200 dark:text-white/60 dark:hover:text-white font-medium bg-[#2b2b2b]/50 hover:bg-bg-[#2b2b2b] border border-[#464444] hover:border-[#ffffff]/70 transition-colors duration-200 w-fit rounded-md py-2 px-4"
         >
           {tech}
         </p>
