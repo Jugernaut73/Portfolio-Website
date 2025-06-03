@@ -36,9 +36,9 @@ const Certifications = ({
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-sm min-[430px]:text-base max-w-lg md:max-w-3xl text-dark-200/70 dark:text-stone-200/70"
           >
-            I&apos;ve earned certifications that validate my skills 
+            {/* I&apos;ve earned certifications that validate my skills 
             and commitment to continuous learning in the tech industry. 
-            Here are some of the key certifications I&apos;ve achieved.
+            Here are some of the key certifications I&apos;ve achieved. */}
           </motion.p>
         </div>
 
