@@ -27,3 +27,7 @@ defineQuery(`*[_type == "certification"] | order(startDate desc) {
   link,
   date
 }`)
+
+export const RESUME_QUERY =
+defineQuery(`*[_type == "resume"][0]{ "url": file.asset->url }
+  `)

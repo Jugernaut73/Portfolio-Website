@@ -2,8 +2,17 @@ import { ChevronRight, Download } from "lucide-react";
 import ShinyButton from "./ui/ShinyButton";
 import Link from "next/link";
 import { TextGenerateEffect } from "./ui/TextGenerate";
+import { RESUME_QUERY } from "@/sanity/lib/queries";
+import { client } from "@/lib/sanity";
 
-const HeroSection = () => {
+async function getResumeUrl() {
+  const data = await client.fetch(RESUME_QUERY);
+  return data?.url;
+}
+
+const HeroSection = async () => {
+  const resumeUrl = await getResumeUrl();
+
   return (
     <>
       <div className="h-screen w-full flex items-center justify-center absolute top-0 left-0">
@@ -31,7 +40,7 @@ const HeroSection = () => {
               <Link href="#projects">See My Work</Link>
             </ShinyButton>
             <a
-              href="/resume/Zach_Ault_Resume.pdf"
+              href={resumeUrl}
               download
               className="flex items-center gap-2.5 group"
             >
