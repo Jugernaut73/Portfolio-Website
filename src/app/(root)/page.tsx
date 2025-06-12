@@ -1,3 +1,5 @@
+export const revalidate = 60; // revalidate every 60 seconds
+
 // ==============================
 // 📦 Imports
 // ==============================
