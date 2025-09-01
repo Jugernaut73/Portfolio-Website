@@ -9,7 +9,7 @@ const Footer = () => {
       <div>
         <div className="space-y-8 p-10">
           <h1 className="text-5xl font-bold max-w-2xl leading-[110%] relative z-10">
-            Like what you see? Message me on{" "}
+            Like what you see? Connect with me on{" "}
             <Link
               href="https://www.linkedin.com/in/zachault/"
               className="text-blue-500 hover:text-blue-500/80 border-b-2 border-blue-500 hover:border-blue-500/80 transition-colors duration-200"

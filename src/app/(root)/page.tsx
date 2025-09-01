@@ -1,8 +1,5 @@
 export const revalidate = 60; // revalidate every 60 seconds
 
-// ==============================
-// 📦 Imports
-// ==============================
 
 import {
   BriefcaseBusiness,
@@ -22,9 +19,6 @@ import { client, urlFor } from "@/lib/sanity";
 import { CERT_QUERY, PROJECT_QUERY, TECH_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-// ==============================
-// 🧭 Navigation Items
-// ==============================
 
 const navItems = [
   { name: "Home", link: "#home", icon: <House /> },
@@ -35,10 +29,6 @@ const navItems = [
 ];
 
 export default async function Page() {
-
-  // ==============================
-  // 🧠 Tech Query
-  // ==============================
 
   const rawTechData = await client.fetch(TECH_QUERY);
 
@@ -56,9 +46,6 @@ export default async function Page() {
     bgColor: item.bgColor.hex
   }));
 
-  // ==============================
-  // 📁 Projects Query
-  // ==============================
 
   const rawProjectData = await client.fetch(PROJECT_QUERY);
 
@@ -66,21 +53,20 @@ export default async function Page() {
   .sort((a: { pos: number }, b: { pos: number }) => a.pos - b.pos)
   .map((item: {
     name: string;
+    category: string;
     image: string;
     techStack: string[];
     gitLink: string;
     webLink: string;
   }) => ({
     name: item.name,
+    category: item.category,
     image: item.image ? urlFor(item.image).width(1000).url() : null,
     techStack: item.techStack,
     gitLink: item?.gitLink ?? null,
     webLink: item?.webLink ?? null
   }));
 
-  // ==============================
-  // 🎓 Certifications Query
-  // ==============================
 
   type Certification = {
     name: string;
@@ -107,9 +93,6 @@ export default async function Page() {
     date: item.date,
   })); 
 
-  // ==============================
-  // 🧱 Page Component
-  // ==============================
 
   return (
     <main className="flex flex-col px-5 sm:px-10 relative">
