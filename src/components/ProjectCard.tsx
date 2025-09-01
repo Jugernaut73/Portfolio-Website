@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 interface ProjectProps {
   name: string;
+  category: string;
   image: string;
   techStack: string[];
   gitLink: string;

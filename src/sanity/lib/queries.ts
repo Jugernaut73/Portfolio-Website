@@ -13,6 +13,7 @@ export const PROJECT_QUERY =
 defineQuery(`*[_type == "project"] | order(pos desc) {
   pos,
   name,
+  category,
   image,
   techStack,
   gitLink,
