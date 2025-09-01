@@ -30,18 +30,18 @@ const ProjectsSection = ({
           <div className="hidden lg:block">
             <div className="flex gap-2">
                 <ShinyButton onClick={() => setCategory(category === "Work" ? "All" : "Work")}>
-                    Work
+                    <span className="cursor-pointer">Work</span>
                 </ShinyButton>
                 <div className = "hidden">
                   <ShinyButton onClick={() => setCategory(category === "Games" ? "All" : "Games")}>
-                      Games
+                      <span className="cursor-pointer">Games</span>
                   </ShinyButton>
                 </div>
                 <ShinyButton onClick={() => setCategory(category === "School" ? "All" : "School")}>
-                    School
+                    <span className="cursor-pointer">School</span>
                 </ShinyButton>
                 <ShinyButton onClick={() => setCategory(category === "Misc" ? "All" : "Misc")}>
-                    Misc
+                   <span className="cursor-pointer">Misc</span>
                 </ShinyButton>
             </div>
           </div>
