@@ -5,6 +5,7 @@ import ProjectCard from "./ProjectCard";
 import ShinyButton from "./ui/ShinyButton";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Dropdown, DropdownItem } from "flowbite-react";
 
 const ProjectsSection = ({
   portfolioProjects,
@@ -27,22 +28,34 @@ const ProjectsSection = ({
           <h2 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold dark:text-stone-200">
             My portfolio
           </h2>
-          <div className="hidden lg:block">
-            <div className="flex gap-2">
+          <div className="flex gap-2">
+            <div className="lg:hidden">
+              <ShinyButton uglyFix="w-20">
+                <Dropdown label={category || "All"} dismissOnClick={true} placement="bottom" className="cursor-pointer my-3" >
+                  <DropdownItem onClick={() => setCategory("All")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">All</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("Work")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">Work</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("School")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">School</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("Misc")} className="pr-18 float-left bg-[#1A1A1A] hover:bg-[#262626]">Misc</DropdownItem>
+                </Dropdown>
+              </ShinyButton>
+            </div>
+            <div className="hidden lg:block">
+              <div className="flex gap-2">
                 <ShinyButton onClick={() => setCategory(category === "Work" ? "All" : "Work")}>
-                    <span className="cursor-pointer">Work</span>
+                  <span className="cursor-pointer">Work</span>
                 </ShinyButton>
                 <div className = "hidden">
                   <ShinyButton onClick={() => setCategory(category === "Games" ? "All" : "Games")}>
-                      <span className="cursor-pointer">Games</span>
+                    <span className="cursor-pointer">Games</span>
                   </ShinyButton>
                 </div>
                 <ShinyButton onClick={() => setCategory(category === "School" ? "All" : "School")}>
-                    <span className="cursor-pointer">School</span>
+                  <span className="cursor-pointer">School</span>
                 </ShinyButton>
                 <ShinyButton onClick={() => setCategory(category === "Misc" ? "All" : "Misc")}>
-                   <span className="cursor-pointer">Misc</span>
+                  <span className="cursor-pointer">Misc</span>
                 </ShinyButton>
+              </div>
             </div>
           </div>
         </div>
