@@ -32,10 +32,10 @@ const ProjectsSection = ({
             <div className="lg:hidden">
               <ShinyButton uglyFix="w-20">
                 <Dropdown label={category || "All"} dismissOnClick={true} placement="bottom" className="cursor-pointer my-3" >
-                  <DropdownItem onClick={() => setCategory("All")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">All</DropdownItem>
-                  <DropdownItem onClick={() => setCategory("Work")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">Work</DropdownItem>
-                  <DropdownItem onClick={() => setCategory("School")} className="pr-10 bg-[#1A1A1A] hover:bg-[#262626]">School</DropdownItem>
-                  <DropdownItem onClick={() => setCategory("Misc")} className="pr-18 float-left bg-[#1A1A1A] hover:bg-[#262626]">Misc</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("All")} className={`pr-10 hover:bg-[#262626] ${category === "All" ? "bg-[#262626]" : "bg-[#1A1A1A]"}`}>All</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("Work")} className={`pr-10 hover:bg-[#262626] ${category === "Work" ? "bg-[#262626]" : "bg-[#1A1A1A]"}`}>Work</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("School")} className={`pr-10 hover:bg-[#262626] ${category === "School" ? "bg-[#262626]" : "bg-[#1A1A1A]"}`}>School</DropdownItem>
+                  <DropdownItem onClick={() => setCategory("Misc")} className={`pr-10 hover:bg-[#262626] ${category === "Misc" ? "bg-[#262626]" : "bg-[#1A1A1A]"}`}>Misc</DropdownItem>
                 </Dropdown>
               </ShinyButton>
             </div>
